@@ -39,3 +39,23 @@ docker login --name=yourlogin
 docker image push docker/simple-build:1.0
 
 ```
+## email-worker-compose
+```bash
+docker-compose up -d
+
+docker-compose exec db psql -U postgres -c '\l'
+
+docker-compose down
+
+docker-compose up -d
+
+docker-compose exec db psql -U postgres -f /scripts/check.sql
+
+docker-compose logs -f -t 
+
+docker-compose exec db psql -U postgres -d email_sender -c 'select * from emails'
+
+docker-compose up -d --scale worker=3
+
+docker-compose logs -f -t worker
+```
