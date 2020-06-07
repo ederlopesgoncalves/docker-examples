@@ -39,6 +39,10 @@ docker login --name=yourlogin
 docker image push docker/simple-build:1.0
 
 ```
+## node-mongo-compose
+```bash
+docker-compose up
+```
 ## email-worker-compose
 ```bash
 docker-compose up -d
