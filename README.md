@@ -63,3 +63,11 @@ docker-compose up -d --scale worker=3
 
 docker-compose logs -f -t worker
 ```
+
+## Another examples
+```bash
+- Saber IP do container
+docker network inspect -f \
+'{{range .IPAM.Config}}{{.Subnet}}{{end}}'  9f6bc3c15568
+
+```
